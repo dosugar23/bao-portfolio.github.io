@@ -1,0 +1,38 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "2_AEsUMvAbwbawFReDLkV"
+uri = "file://artifacts/portfolio/public/images/portfolio-ai.png"
+type = "image"
+title = "AI Content Generation Graphic"
+
+[[generated]]
+id = "qhtwJEw48TpxVYNJe_ari"
+uri = "file://artifacts/portfolio/public/images/portfolio-social.png"
+type = "image"
+title = "Social Media Growth Graphic"
+
+[[generated]]
+id = "7CeVpSQ4IYxiTeM7Vxeao"
+uri = "file://artifacts/portfolio/public/images/portfolio-ugc.png"
+type = "image"
+title = "UGC Video Creator Graphic"
+
+[[generated]]
+id = "QAHV9YMogCk_MyAeKd2nV"
+uri = "file://artifacts/portfolio/public/images/portfolio-crypto.png"
+type = "image"
+title = "Crypto Community Hub"
+
+[[generated]]
+id = "hrvUr8UBZdMBa3vBqKvIa"
+uri = "file://artifacts/portfolio/public/images/portfolio-seo.png"
+type = "image"
+title = "SEO Blog Strategy"
+
+[[generated]]
+id = "NAPX8g4XV0g5AcBd5FLID"
+uri = "file://artifacts/portfolio/public/images/portfolio-campaign.png"
+type = "image"
+title = "Marketing Campaign Success"
