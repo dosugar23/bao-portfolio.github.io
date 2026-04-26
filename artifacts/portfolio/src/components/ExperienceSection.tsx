@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { Briefcase, Image as ImageIcon } from "lucide-react";
 import { experiences, type MediaItem } from "@/data/experience";
+import ZoomableImage from "@/components/ZoomableImage";
 
 function MediaGallery({ media, company }: { media: MediaItem[]; company: string }) {
   if (media.length === 0) {
@@ -31,10 +32,10 @@ function MediaGallery({ media, company }: { media: MediaItem[]; company: string 
             data-testid={`media-${i}`}
           >
             {item.type === "image" ? (
-              <img
+              <ZoomableImage
                 src={item.src}
                 alt={`${company} work sample ${i + 1}`}
-                loading="lazy"
+                testId={`media-${i}-zoom`}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             ) : (
