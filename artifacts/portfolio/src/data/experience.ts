@@ -54,6 +54,7 @@ const data: RawEntry[] = [
       "Catalyzed community engagement with 20,000 profile visits and 13,000 content interactions through 700+ high-impact copywriting and visual design pieces.",
       "Monetized digital presence through affiliate programs and AI consultancy.",
     ],
+    links: [{ label: "Bao AI Daily on Facebook", url: "https://www.facebook.com/baoaidailynews" }],
   },
   {
     slug: "speak",
