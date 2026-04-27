@@ -3,6 +3,11 @@ export type MediaItem = {
   src: string;
 };
 
+export type SocialLink = {
+  label: string;
+  url: string;
+};
+
 export type ExperienceEntry = {
   slug: string;
   company: string;
@@ -10,6 +15,7 @@ export type ExperienceEntry = {
   dates: string;
   duration: string;
   bullets: string[];
+  links: SocialLink[];
   media: MediaItem[];
 };
 
@@ -33,7 +39,9 @@ function getMedia(slug: string): MediaItem[] {
   }));
 }
 
-const data: Omit<ExperienceEntry, "media">[] = [
+type RawEntry = Omit<ExperienceEntry, "media" | "links"> & { links?: SocialLink[] };
+
+const data: RawEntry[] = [
   {
     slug: "bao-ai-daily",
     company: "Bao AI Daily",
@@ -202,5 +210,6 @@ const data: Omit<ExperienceEntry, "media">[] = [
 
 export const experiences: ExperienceEntry[] = data.map((entry) => ({
   ...entry,
+  links: entry.links ?? [],
   media: getMedia(entry.slug),
 }));

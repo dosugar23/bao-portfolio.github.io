@@ -5,9 +5,30 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Briefcase, Image as ImageIcon } from "lucide-react";
-import { experiences, type MediaItem } from "@/data/experience";
+import { Briefcase, Image as ImageIcon, ExternalLink } from "lucide-react";
+import { experiences, type MediaItem, type SocialLink } from "@/data/experience";
 import ZoomableImage from "@/components/ZoomableImage";
+
+function SocialLinks({ links, slug }: { links: SocialLink[]; slug: string }) {
+  if (links.length === 0) return null;
+  return (
+    <div className="flex flex-wrap gap-3 mt-4">
+      {links.map((link, i) => (
+        <a
+          key={i}
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80 hover:underline underline-offset-4 decoration-2 transition-colors"
+          data-testid={`exp-${slug}-link-${i}`}
+        >
+          <ExternalLink size={14} />
+          {link.label}
+        </a>
+      ))}
+    </div>
+  );
+}
 
 function MediaGallery({ media, company }: { media: MediaItem[]; company: string }) {
   if (media.length === 0) {
@@ -107,6 +128,7 @@ export default function ExperienceSection() {
                     <p className="mt-3 text-sm font-semibold text-foreground/60">
                       Duration: {exp.duration}
                     </p>
+                    <SocialLinks links={exp.links} slug={exp.slug} />
                     <MediaGallery media={exp.media} company={exp.company} />
                   </div>
                 </AccordionContent>

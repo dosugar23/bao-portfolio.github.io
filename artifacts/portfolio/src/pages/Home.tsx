@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import ExperienceSection from "@/components/ExperienceSection";
+import PersonalProjectsSection from "@/components/PersonalProjectsSection";
 import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <AboutSection />
         <PortfolioSection />
         <ExperienceSection />
+        <PersonalProjectsSection />
         <ContactSection />
       </main>
       <footer className="bg-foreground text-background py-8 text-center" data-testid="footer">
