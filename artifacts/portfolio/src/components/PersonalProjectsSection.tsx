@@ -3,25 +3,24 @@ import { ExternalLink, Sparkles } from "lucide-react";
 import { personalProjects, type MediaItem } from "@/data/personalProjects";
 import ZoomableImage from "@/components/ZoomableImage";
 
+function YouTubeEmbed({ videoId, slug, title }: { videoId: string; slug: string; title: string }) {
+  return (
+    <div className="mt-6 rounded-2xl overflow-hidden border border-border/60 bg-black">
+      <iframe
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title={`${title} on YouTube`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        loading="lazy"
+        className="w-full aspect-video bg-black"
+        data-testid={`personal-${slug}-youtube`}
+      />
+    </div>
+  );
+}
+
 function ProjectMedia({ media, title, slug }: { media: MediaItem[]; title: string; slug: string }) {
   if (media.length === 0) return null;
-
-  const isFilm = media.length === 1 && media[0].type === "video";
-
-  if (isFilm) {
-    return (
-      <div className="mt-6 rounded-2xl overflow-hidden border border-border/60 bg-black">
-        <video
-          src={media[0].src}
-          controls
-          playsInline
-          preload="metadata"
-          className="w-full aspect-video bg-black"
-          data-testid={`personal-${slug}-video`}
-        />
-      </div>
-    );
-  }
 
   return (
     <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -126,7 +125,15 @@ export default function PersonalProjectsSection() {
                 </div>
               )}
 
-              <ProjectMedia media={project.media} title={project.title} slug={project.slug} />
+              {project.youtubeId ? (
+                <YouTubeEmbed
+                  videoId={project.youtubeId}
+                  slug={project.slug}
+                  title={project.title}
+                />
+              ) : (
+                <ProjectMedia media={project.media} title={project.title} slug={project.slug} />
+              )}
             </motion.article>
           ))}
         </div>

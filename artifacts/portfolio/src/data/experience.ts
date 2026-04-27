@@ -67,6 +67,7 @@ const data: RawEntry[] = [
       "Edited 1,000+ video assets for paid advertising campaigns on Facebook, Instagram, and TikTok.",
       "Led market research and trend analysis to develop creative content strategies that reached 50M+ unique users.",
     ],
+    links: [{ label: "Visit Speak", url: "https://www.speak.com" }],
   },
   {
     slug: "starmaker",
@@ -78,6 +79,7 @@ const data: RawEntry[] = [
       "Localized global scripts into natural, culturally-resonant Vietnamese content to drive local user acquisition.",
       "Produced 20+ authentic, self-filmed short-form videos with a focus on high retention and engagement.",
     ],
+    links: [{ label: "Visit StarMaker Studios", url: "https://www.starmakerstudios.com/" }],
   },
   {
     slug: "lbank",
@@ -90,6 +92,7 @@ const data: RawEntry[] = [
       "Delivered a 2,400% ROI as a Lead Trader, consistently outperforming market benchmarks.",
       "Operated and managed a copy-trading group of 100 active members with a total Assets Under Management (AUM) exceeding $30,000.",
     ],
+    links: [{ label: "Visit LBank", url: "https://www.lbank.com" }],
   },
   {
     slug: "boostenx",
@@ -101,6 +104,7 @@ const data: RawEntry[] = [
       "Formulated SEO content strategies that increased organic website traffic and improved keyword rankings.",
       "Managed end-to-end influencer collaborations and brand partnerships to execute nationwide marketing campaigns.",
     ],
+    links: [{ label: "Visit BoostenX", url: "https://boostenx.com/" }],
   },
   {
     slug: "omnigpt",
@@ -113,6 +117,7 @@ const data: RawEntry[] = [
       "Authored 20+ educational SEO blog posts to drive inbound leads and establish thought leadership in the AI space.",
       "Directed the sourcing and onboarding of KOLs and UGC creators, resulting in a 300% increase in paid users.",
     ],
+    links: [{ label: "Visit OmniGPT", url: "https://omnigpt.co/" }],
   },
   {
     slug: "superstack",
@@ -126,6 +131,7 @@ const data: RawEntry[] = [
       "Optimized the recruitment funnel by managing candidate communications and testing, successfully minimizing the cost per hire by 300%.",
       "Contributed to business growth and sales strategy over a 2-year 10-month tenure, supporting the expansion of the regional client base.",
     ],
+    links: [{ label: "SuperStack on LinkedIn", url: "https://linkedin.com/company/superstackdigital" }],
   },
   {
     slug: "kts-capital",
@@ -136,6 +142,10 @@ const data: RawEntry[] = [
     bullets: [
       "Moderated an ecosystem of 5 social channels (Telegram/Facebook), providing support to a community of 100,000+ members.",
       "Engineered technical setups and scripts for livestream events, attracting 1K+ peak concurrent viewers.",
+    ],
+    links: [
+      { label: "KTS Capital community", url: "https://www.facebook.com/groups/1398763806849013" },
+      { label: "KTS Onchain on Facebook", url: "https://www.facebook.com/KTSOnchain" },
     ],
   },
   {
@@ -184,6 +194,7 @@ const data: RawEntry[] = [
     bullets: [
       "Maintained a 100% Job Success Score while successfully completing 20+ diverse marketing and content projects.",
     ],
+    links: [{ label: "View Upwork profile", url: "https://www.upwork.com/freelancers/~017509fd4eefaa8910" }],
   },
   {
     slug: "badaboom",
@@ -206,6 +217,7 @@ const data: RawEntry[] = [
       "Drove a 50% monthly revenue growth over a 3-month period through targeted event marketing and acoustic programming.",
       "Negotiated contracts with 10+ local artists.",
     ],
+    links: [{ label: "Da Dreamer on Facebook", url: "https://www.facebook.com/dadreamervn" }],
   },
 ];
 

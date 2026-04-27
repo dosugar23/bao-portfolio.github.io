@@ -16,6 +16,7 @@ export type PersonalProject = {
   bullets: string[];
   links: SocialLink[];
   media: MediaItem[];
+  youtubeId?: string;
 };
 
 const mediaModules = import.meta.glob(
@@ -71,14 +72,15 @@ const data: Omit<PersonalProject, "media">[] = [
   },
   {
     slug: "short-film",
-    title: '"A Flower Is Not a Flower" – Short Film',
+    title: "Short Film Appearance",
     role: "Cast & Collaborator",
     dates: "Personal Project",
     bullets: [
-      'Featured in the short film "A Flower Is Not a Flower" directed by Thong Dao.',
+      "Featured in an independent short film as a personal creative project.",
       "An exploration of acting and on-camera presence outside of marketing campaigns.",
     ],
-    links: [],
+    links: [{ label: "Watch on YouTube", url: "https://www.youtube.com/watch?v=lU2Tc8ww7XE" }],
+    youtubeId: "lU2Tc8ww7XE",
   },
 ];
 
