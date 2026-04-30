@@ -1,0 +1,57 @@
+name: Deploy Portfolio to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch: # Cho phép bạn chạy workflow này thủ công nếu cần
+
+# Cấp quyền cần thiết để GitHub Actions có thể deploy
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Chống việc chạy đè nhiều action cùng lúc
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      # Dựa vào hình 1 của bạn, mình thấy có file pnpm-lock.yaml, 
+      # bạn nên dùng pnpm hoặc giữ nguyên npm tùy cách bạn thiết lập
+      - name: Install dependencies
+        run: npm install 
+
+      - name: Build project
+        run: npx webpack
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # QUAN TRỌNG: Sửa './dist' thành tên thư mục đầu ra của bạn nếu webpack xuất ra thư mục khác (ví dụ: './build')
+          path: './dist' 
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build # Job này chỉ chạy sau khi job build hoàn thành
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
