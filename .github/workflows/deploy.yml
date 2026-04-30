@@ -31,7 +31,7 @@ jobs:
       # Dựa vào hình 1 của bạn, mình thấy có file pnpm-lock.yaml, 
       # bạn nên dùng pnpm hoặc giữ nguyên npm tùy cách bạn thiết lập
       - name: Install dependencies
-        run: npm install 
+        run: pnpm install 
 
       - name: Build project
         run: npx webpack
@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # QUAN TRỌNG: Sửa './dist' thành tên thư mục đầu ra của bạn nếu webpack xuất ra thư mục khác (ví dụ: './build')
-          path: './dist' 
+          path: './build' 
 
   deploy:
     environment:
